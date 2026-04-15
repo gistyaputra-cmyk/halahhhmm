@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+}
+
+.bg-tech {
+    background: linear-gradient(135deg, #0f2027, #00c853, #1b5e20);
+    position: relative;
+}
+
+.bg-tech::before {
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+    linear-gradient(rgba(0,255,0,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,0,0.1) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+    from{transform:translate(0,0);}
+    to{transform:translate(-40px,-40px);}
+}
+
+.navbar {
+    display:flex;
+    align-items:center;
+    padding:15px 30px;
+    background:rgba(0,0,0,0.7);
+}
+
+.navbar span {
+    margin:0 20px;
+    cursor:pointer;
+}
+
+.logo {
+    width:60px;
+    margin-right:20px;
+}
+
+.logout {
+    margin-left:auto;
+}
+
+.login-box {
+    width:300px;
+    margin:120px auto;
+    text-align:center;
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+}
+
+.img-about {
+    width:45%;
+    margin:10px;
+}
+
+.products {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.product {
+    width:150px;
+    margin:10px;
+    background:rgba(0,0,0,0.5);
+    padding:10px;
+    text-align:center;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.product img {
+    width:100%;
+}
+
+.popup {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content {
+    background:white;
+    color:black;
+    padding:20px;
+}
+
+.jual-container {
+    text-align:center;
+    margin-top:150px;
+}
+
+.plus-btn {
+    font-size:40px;
+    padding:20px;
+    border-radius:50%;
+    background:#00e676;
+}
