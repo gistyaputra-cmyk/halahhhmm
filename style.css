@@ -7,8 +7,10 @@ body {
 .bg-tech {
     background: linear-gradient(135deg, #0f2027, #00c853, #1b5e20);
     position: relative;
+    overflow: hidden;
 }
 
+/* FIX: ini yang sebelumnya bikin tombol gak bisa diklik */
 .bg-tech::before {
     content:"";
     position:absolute;
@@ -19,6 +21,9 @@ body {
     linear-gradient(90deg, rgba(0,255,0,0.1) 1px, transparent 1px);
     background-size:40px 40px;
     animation:moveBg 20s linear infinite;
+
+    pointer-events: none; /* WAJIB */
+    z-index: 0;
 }
 
 @keyframes moveBg {
@@ -26,11 +31,14 @@ body {
     to{transform:translate(-40px,-40px);}
 }
 
+/* NAVBAR */
 .navbar {
     display:flex;
     align-items:center;
     padding:15px 30px;
     background:rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 1;
 }
 
 .navbar span {
@@ -47,19 +55,24 @@ body {
     margin-left:auto;
 }
 
+/* LOGIN FIX */
 .login-box {
     width:300px;
     margin:120px auto;
     text-align:center;
     background:rgba(0,0,0,0.6);
     padding:20px;
+    position: relative;
+    z-index: 1; /* Biar di atas overlay */
 }
 
+/* ABOUT */
 .img-about {
     width:45%;
     margin:10px;
 }
 
+/* PRODUCT */
 .products {
     display:flex;
     flex-wrap:wrap;
@@ -80,6 +93,7 @@ body {
     width:100%;
 }
 
+/* POPUP */
 .popup {
     display:none;
     position:fixed;
@@ -88,6 +102,7 @@ body {
     background:rgba(0,0,0,0.8);
     justify-content:center;
     align-items:center;
+    z-index: 2;
 }
 
 .popup-content {
@@ -96,9 +111,12 @@ body {
     padding:20px;
 }
 
+/* JUAL */
 .jual-container {
     text-align:center;
     margin-top:150px;
+    position: relative;
+    z-index: 1;
 }
 
 .plus-btn {
